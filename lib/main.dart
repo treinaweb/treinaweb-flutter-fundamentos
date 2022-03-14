@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     ),
   );
@@ -22,38 +23,42 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Raxa conta"),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              children: [
-                const Icon(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 25, bottom: 20),
+                child: Icon(
                   Icons.monetization_on,
                   size: 120,
                   color: Colors.blue,
                 ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    labelText: "Quantidade de pessoa",
-                    labelStyle: TextStyle(color: Colors.blue),
-                  ),
+              ),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: "Quantidade de pessoa",
+                  labelStyle: TextStyle(color: Colors.blue),
                 ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    labelText: "Valor da conta",
-                    labelStyle: TextStyle(color: Colors.blue),
-                  ),
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.blue,
-                    fontSize: 18,
-                  ),
+              ),
+              TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: "Valor da conta",
+                  labelStyle: TextStyle(color: Colors.blue),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.blue,
+                  fontSize: 18,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 25),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
                   child: OutlinedButton(
                     onPressed: () {},
                     child: const Text(
@@ -67,16 +72,16 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Text(
-                  "Valor por pessoa",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 18,
-                  ),
-                )
-              ],
-            ),
+              ),
+              const Text(
+                "Valor por pessoa",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 18,
+                ),
+              )
+            ],
           ),
         ),
       ),
