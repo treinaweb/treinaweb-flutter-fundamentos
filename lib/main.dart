@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Raxa conta"),
+        title: const Center(child: Text("Raxa conta")),
       ),
       body: SingleChildScrollView(
         child: Padding(
